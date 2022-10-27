@@ -571,10 +571,10 @@ public class Drink {
 
     @Override
     public String toString() {
-        return "Drink{" +
+        return "\nDrink{" +
                 "strDrink='" + strDrink + '\'' +
-                ", strCategory='" + strCategory + '\'' +
-                ", strAlcoholic='" + strAlcoholic + '\'' +
-                "}\n";
+                ", strCategory='" + this.strCategory + '\'' +
+                ", strAlcoholic='" + this.strAlcoholic + '\'' +
+                "}";
     }
 }

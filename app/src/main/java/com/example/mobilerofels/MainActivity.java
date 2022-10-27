@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editText;
     Button button;
     RadioGroup radioGroup;
+    ListView listView;
 
     private final String LOG_TAG = "MainActivity";
 
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         editText = findViewById(R.id.editTextSearchRequest);
         button = findViewById(R.id.buttonFind);
         radioGroup = findViewById(R.id.radioGroupSearchType);
+        listView = findViewById(R.id.drinkLV);
 
         drinkParser = new DrinkParser();
 
@@ -85,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<DrinkList> call, Response<DrinkList> response) {
                 if (response.isSuccessful()) {
                     populateListView(response.body().getDrinks());
-
                 }else {
                     Toast.makeText(MainActivity.this, "Something go wrong", Toast.LENGTH_SHORT).show();
                 }
@@ -93,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<DrinkList> call, Throwable t) {
+                Log.d(LOG_TAG,t.toString());
                 Toast.makeText(MainActivity.this, "RequestError", Toast.LENGTH_SHORT).show();
             }
         });
@@ -100,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void populateListView(List<Drink> drinkList) {
-        Log.d(LOG_TAG,drinkList.toString());
+        DrinkAdapter drinkAdapter = new DrinkAdapter(getApplicationContext(),R.layout.list_item,drinkList);
+        listView.setAdapter(drinkAdapter);
+
     }
 }

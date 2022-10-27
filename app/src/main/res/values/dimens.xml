@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="subTextSize">15sp</dimen>
+    <dimen name="mainTextSize">25sp</dimen>
+</resources>

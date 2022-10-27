@@ -11,4 +11,6 @@ public interface DrinkInterface {
     @GET("filter.php")
     Call<DrinkList> getByIngredient(@Query("i") String ingredient);
 
+    @GET("lookup.php")
+    Call<DrinkList> getById(@Query("i") String id);
 }
