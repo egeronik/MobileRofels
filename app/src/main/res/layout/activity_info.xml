@@ -1,9 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".InfoActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/infName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name" />
+    <TextView
+        android:id="@+id/infAlcoholic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Alcoholic" />
+    <TextView
+        android:id="@+id/infGlass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="glassType" />
+    <TextView
+        android:id="@+id/infInstructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Instructions" />
+
+    <TableLayout
+        android:id="@+id/tabl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/infIng1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ingredient" />
+
+            <TextView
+                android:id="@+id/infMes1"
+                android:gravity="right"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Measure" />
+        </TableRow>
+
+
+    </TableLayout>
+
+
+</LinearLayout>

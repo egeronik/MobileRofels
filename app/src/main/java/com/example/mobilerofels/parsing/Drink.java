@@ -150,7 +150,7 @@ public class Drink {
     private Object strMeasure15;
     @SerializedName("strImageSource")
     @Expose
-    private Object strImageSource;
+    private String strImageSource;
     @SerializedName("strImageAttribution")
     @Expose
     private Object strImageAttribution;
@@ -537,11 +537,11 @@ public class Drink {
         this.strMeasure15 = strMeasure15;
     }
 
-    public Object getStrImageSource() {
+    public String  getStrImageSource() {
         return strImageSource;
     }
 
-    public void setStrImageSource(Object strImageSource) {
+    public void setStrImageSource(String strImageSource) {
         this.strImageSource = strImageSource;
     }
 
