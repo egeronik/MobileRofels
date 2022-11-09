@@ -57,7 +57,7 @@ public class InfoActivity extends AppCompatActivity {
 
         tabl = findViewById(R.id.tabl);
 
-        imageView.setVisibility(View.GONE);
+
 
         DrinkParser drinkParser = new DrinkParser();
         drinkParser.getaPie().getById(getIntent().getStringExtra("id")).enqueue(new Callback<DrinkList>() {
